@@ -1,6 +1,5 @@
 import React from "react";
 import List from './List'
-import MovieCard from "./MovieCard";
 
 export interface Props {
     list?: {title: string[], desc:string[], img:string[]}
@@ -79,7 +78,7 @@ class Search extends React.Component<Props,State> {
                     </section>
                 </div>
             </div>
-    );
+        );
     }
 }
 
