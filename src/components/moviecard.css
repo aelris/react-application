@@ -1,11 +1,9 @@
-.MovieCard {
-    height: 400px;
-    width: 300px;
-    display: flex;
-    justify-content: space-around;
+.movieCard {
+
 }
 
 .movieImg {
-    max-height: 300px;
-    max-width: 200px;
+    max-height: 460px;
+    max-width: 320px;
+    cursor: pointer;
 }
