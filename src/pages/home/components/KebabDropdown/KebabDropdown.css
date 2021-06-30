@@ -1,0 +1,32 @@
+.kebabDropdownContainer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100px;
+    background-color: #424242;
+    z-index: 1;
+}
+
+.crossImg {
+    margin: 5px;
+    align-self: flex-end;
+    width: 30px;
+    height: 30px;
+}
+
+.dropBtn {
+    box-shadow: none;
+    border: none;
+    background: #424242;
+    height: 35px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 20px;
+    color: white;
+}
+
+.dropBtn:hover {
+    background: #f65261;
+    height: 35px;
+    cursor: pointer;
+}

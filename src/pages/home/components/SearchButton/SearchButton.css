@@ -1,0 +1,12 @@
+.searchButton {
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    background: #f65261;
+    cursor: pointer;
+    width: 182px;
+    height: 46px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 18px;
+}
