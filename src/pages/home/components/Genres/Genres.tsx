@@ -10,7 +10,7 @@ class Genres extends React.Component<Props, {}> {
     const { name } = this.props;
 
     return (
-      <a href="" className="genre">{name}</a>
+      <a href="#" className="genre">{name}</a>
     )
   }
 }
