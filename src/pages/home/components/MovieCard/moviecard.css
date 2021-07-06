@@ -1,9 +1,5 @@
-.movieCard {
-
-}
-
 .movieImg {
-    max-height: 460px;
-    max-width: 320px;
+    height: 460px;
+    width: 320px;
     cursor: pointer;
 }

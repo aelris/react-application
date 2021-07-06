@@ -1,21 +1,20 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import {SearchButton} from "./components/SearchButton/SearchButton";
 import Genres from "./components/Genres/Genres";
-import MovieCard from "./components/MovieCard/MovieCard";
 import AddMoviePage from "../addMoviePage/AddMoviePage";
-import RaM from "../../images/RickAndMorty.jpg";
-import Man from "../../images/TheMandalorian.jpg";
-import Game from "../../images/GameOfThrones.jpg";
 import "./Home.css";
+import {MovieCardContainer} from "./components/MovieCardContainer/MovieCardContainer";
+import {movieCardList} from "./components/MovieCardContainer/MovieList";
 
 
 
 const Home = () => {
   const [modalActive, setModalActive] = useState(false);
+  const onClickModalActive = useCallback(() => {setModalActive(true)}, []);
   return (
       <div className="container">
         <div className="addMovieContainer">
-          <button type="button" className="addMovie" onClick={() => setModalActive(true)}>
+          <button type="button" className="addMovie" onClick={onClickModalActive} >
             + Add Movie
           </button>
         </div>
@@ -30,11 +29,7 @@ const Home = () => {
           <Genres name="Horror"/>
           <Genres name="Crime"/>
         </div>
-        <div className="movieContainer">
-          <MovieCard img={RaM} title="Rick and Morty" year="2013" description="Action & Adventure"/>
-          <MovieCard img={Man} title="The Mandalorian" year="2019" description="Action & Adventure"/>
-          <MovieCard img={Game} title="Game of Thrones" year="2011" description="Drama, Fantasy"/>
-        </div>
+        <MovieCardContainer  movieCardList={movieCardList}/>
         <AddMoviePage active={modalActive} setActive={setModalActive}/>
     </div>
   )

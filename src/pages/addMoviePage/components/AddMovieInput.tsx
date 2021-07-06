@@ -5,11 +5,11 @@ type Props = {
   placeholder: string,
   label: string,
 }
-const AddMovieInput = (props: Props) => {
+const AddMovieInput = ({ type, placeholder, label }: Props) => {
   return (
     <div>
-    <div>{props.label}</div>
-    <input type={props.type} className="input" placeholder={props.placeholder}/>
+    <div>{label}</div>
+    <input type={type} className="input" placeholder={placeholder}/>
     </div>
   )
 }
