@@ -13,14 +13,16 @@ const Home = () => {
   const onClickModalActive = useCallback(() => {setModalActive(true)}, []);
   return (
       <div className="container">
-        <div className="addMovieContainer">
-          <button type="button" className="addMovie" onClick={onClickModalActive} >
-            + Add Movie
-          </button>
-        </div>
-        <div className="searchContainer">
-          <input type="text" className="searchInput" placeholder="What do you want to watch?"/>
-          <SearchButton/>
+        <div className="header">
+          <div className="addMovieContainer">
+            <button type="button" className="addMovie" onClick={onClickModalActive} >
+              + Add Movie
+            </button>
+          </div>
+          <div className="searchContainer">
+            <input type="text" className="searchInput" placeholder="What do you want to watch?"/>
+            <SearchButton/>
+          </div>
         </div>
         <div className="genresContainer">
           <Genres name="All"/>

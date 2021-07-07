@@ -5,7 +5,7 @@ export const MovieCardContainer = ({movieCardList}:{movieCardList: {title: strin
   return (
     <div className="movieContainer">
       {movieCardList.map((item, index) => (
-        <MovieCard key={index} img={item.imageUrl} title={item.title} year={item.year} description={item.description}/>
+        <MovieCard key={index} img={item.imageUrl} title={item.title} year={item.year} description={item.genre}/>
         ))}
     </div>
   )
