@@ -1,9 +1,16 @@
-export const movieCardList = [
+export interface Movie {
+  title: string,
+  year: string,
+  imageUrl: string,
+  genre: string
+}
+
+export const movieCardList: Movie[] = [
   {
-  title: "Rick and Morty",
-  year: "2013",
-  imageUrl: "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_.jpg",
-  genre: "Comedy & Adventure", },
+    title: "Rick and Morty",
+    year: "2013",
+    imageUrl: "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_.jpg",
+    genre: "Comedy & Adventure", },
   {
     title: "The Mandalorian",
     year: "2019",

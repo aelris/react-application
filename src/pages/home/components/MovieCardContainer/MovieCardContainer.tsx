@@ -1,12 +1,23 @@
 import MovieCard from "../MovieCard/MovieCard";
-import React from "react";
+import React, {useCallback} from "react";
+import {Movie} from "./MovieList";
 
-export const MovieCardContainer = ({movieCardList}:{movieCardList: {title: string, year: string, imageUrl: string, description: string}[]} ) => {
+type Props = {
+  movieCardList: Movie[];
+  onClick: (movie: Movie) => void
+}
+
+export const MovieCardContainer = ({ movieCardList, onClick }: Props) => {
+
+  const onClickHandler = useCallback((movie: Movie) => {
+    onClick(movie);
+  }, []);
+
+  const movieList = movieCardList.map((movie, index) => <MovieCard key={movie.title} movie={movie} onClick={onClickHandler} />)
+
   return (
     <div className="movieContainer">
-      {movieCardList.map((item, index) => (
-        <MovieCard key={index} img={item.imageUrl} title={item.title} year={item.year} description={item.genre}/>
-        ))}
+      { movieList }
     </div>
   )
 }
