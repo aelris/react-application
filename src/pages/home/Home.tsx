@@ -5,6 +5,7 @@ import AddMoviePage from "../addMoviePage/AddMoviePage";
 import "./Home.css";
 import {MovieCardContainer} from "./components/MovieCardContainer/MovieCardContainer";
 import {Movie, movieCardList,} from "./components/MovieCardContainer/MovieList";
+import MovieInfo from "./components/MovieInfo";
 
 
 
@@ -17,6 +18,9 @@ const Home = () => {
   }, []);
   const onMovieClick = useCallback((movie) => {
     setSelectedMovie(movie);
+  }, []);
+  const onClickMovieHide = useCallback(() => {
+    setSelectedMovie(null);
   }, []);
 
   return (
@@ -38,7 +42,7 @@ const Home = () => {
               </>
             ) :
             (
-              <div>{selectedMovie.title}</div>
+              <MovieInfo movie={selectedMovie} onClick={onClickMovieHide}/>
             )
           }
 
