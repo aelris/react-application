@@ -1,0 +1,4 @@
+.MovieInfo {
+    display: flex;
+    backdrop-filter: blur(20px);
+}

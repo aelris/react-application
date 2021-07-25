@@ -35,3 +35,8 @@
     text-transform: uppercase;
     font-size: 18px;
 }
+
+.header {
+    height: 500px;
+    background: no-repeat center/100% url("https://wallpapercave.com/wp/wp1945909.jpg");
+}

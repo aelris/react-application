@@ -36,6 +36,9 @@ const config = {
       inject: 'body',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
   resolve: {
     extensions: [
       '.ts',
