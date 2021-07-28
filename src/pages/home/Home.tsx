@@ -1,13 +1,14 @@
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {SearchButton} from "./components/SearchButton/SearchButton";
 import Genres from "./components/Genres/Genres";
 import AddMoviePage from "../addMoviePage/AddMoviePage";
 import "./Home.css";
 import {MovieCardContainer} from "./components/MovieCardContainer/MovieCardContainer";
-import {Movie, movieCardList,} from "./components/MovieCardContainer/MovieList";
 import MovieInfo from "./components/MovieInfo";
-
-
+import {useDispatch, useSelector} from "react-redux";
+import {getMoviesThunk} from "../../store/movies-store/getMovies.thunk";
+import {Store} from "../../store";
+import {Movie} from "../../api/movies-api/models/movie.model";
 
 const Home = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -23,11 +24,19 @@ const Home = () => {
     setSelectedMovie(null);
   }, []);
 
+  const dispatch = useDispatch();
+
+  const movies = useSelector((store: Store) => store.movies.entities)
+
+  useEffect(() => {
+    dispatch(getMoviesThunk({limit: 10, offset: 0}))
+  }, [])
+
   return (
       <div className="container">
         <div className="header">
 
-          { selectedMovie === null ?
+          { !selectedMovie ?
             (
               <>
                 <div className="addMovieContainer">
@@ -55,7 +64,7 @@ const Home = () => {
           <Genres name="Horror"/>
           <Genres name="Crime"/>
         </div>
-        <MovieCardContainer onClick={onMovieClick} movieCardList={movieCardList}/>
+        <MovieCardContainer onClick={onMovieClick} movieCardList={movies}/>
         <AddMoviePage active={modalActive} setActive={setModalActive}/>
     </div>
   )

@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, Router, Switch } from "react-router";
 import { createBrowserHistory } from "history";
 import Home from './pages/home';
-import AddMoviePage from "./pages/addMoviePage/AddMoviePage";
 import './App.css';
-
+import {Provider} from "react-redux";
+import {store} from "./store";
 
 const history = createBrowserHistory();
 const App = () => {
   return (
+    <Provider store={store}>
       <Router history={history}>
         <Switch>
           <Route exact path="/">
@@ -16,6 +17,7 @@ const App = () => {
           </Route>
         </Switch>
       </Router>
+    </Provider>
   );
 }
 

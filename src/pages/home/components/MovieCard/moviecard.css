@@ -2,4 +2,5 @@
     height: 460px;
     width: 320px;
     cursor: pointer;
+    display: block;
 }

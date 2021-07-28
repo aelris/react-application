@@ -1,6 +1,7 @@
 import MovieCard from "../MovieCard/MovieCard";
 import React, {useCallback} from "react";
-import {Movie} from "./MovieList";
+import {Movie} from "../../../../api/movies-api/models/movie.model";
+
 
 type Props = {
   movieCardList: Movie[];
