@@ -33,41 +33,41 @@ const Home = () => {
   }, [])
 
   return (
-      <div className="container">
-        <div className="header">
+    <div className="container">
+      <div className="header">
 
-          { !selectedMovie ?
-            (
-              <>
-                <div className="addMovieContainer">
-                  <button type="button" className="addMovie" onClick={onClickModalActive} >
-                    + Add Movie
-                  </button>
-                </div>
-                <div className="searchContainer">
-                  <input type="text" className="searchInput" placeholder="What do you want to watch?"/>
-                  <SearchButton/>
-                </div>
-              </>
-            ) :
-            (
-              <MovieInfo movie={selectedMovie} onClick={onClickMovieHide}/>
-            )
-          }
+        {!selectedMovie ?
+          (
+            <>
+              <div className="addMovieContainer">
+                <button type="button" className="addMovie" onClick={onClickModalActive}>
+                  + Add Movie
+                </button>
+              </div>
+              <div className="searchContainer">
+                <input type="text" className="searchInput" placeholder="What do you want to watch?"/>
+                <SearchButton/>
+              </div>
+            </>
+          ) :
+          (
+            <MovieInfo movie={selectedMovie} onClick={onClickMovieHide}/>
+          )
+        }
 
 
-        </div>
-        <div className="genresContainer">
-          <Genres name="All"/>
-          <Genres name="Documentary"/>
-          <Genres name="Comedy"/>
-          <Genres name="Horror"/>
-          <Genres name="Crime"/>
-        </div>
-        <MovieCardContainer onClick={onMovieClick} movieCardList={movies}/>
-        <AddMoviePage active={modalActive} setActive={setModalActive}/>
+      </div>
+      <div className="genresContainer">
+        <Genres name="All"/>
+        <Genres name="Documentary"/>
+        <Genres name="Comedy"/>
+        <Genres name="Horror"/>
+        <Genres name="Crime"/>
+      </div>
+      <MovieCardContainer onClick={onMovieClick} movieCardList={movies}/>
+      <AddMoviePage active={modalActive} setActive={setModalActive}/>
     </div>
-  )
+  );
 }
 
 export default Home;

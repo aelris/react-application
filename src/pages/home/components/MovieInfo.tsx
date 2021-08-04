@@ -1,6 +1,6 @@
 import React, {useCallback} from "react";
-import {Movie} from "./MovieCardContainer/MovieList";
 import "./movieInfo.css"
+import {Movie} from "../../../api/movies-api/models/movie.model";
 
 type Props = {
   movie: Movie;
@@ -8,7 +8,7 @@ type Props = {
 }
 
 export default function MovieInfo({ movie, onClick}: Props){
-  const { imageUrl, title, score, year, genre, desc } = movie;
+  const { poster_path, title, vote_average, release_date, genres, overview } = movie;
 
   const onClickHandler = useCallback(() => {
     onClick()
@@ -18,13 +18,13 @@ export default function MovieInfo({ movie, onClick}: Props){
     <>
       <div className="MovieInfo">
         <button onClick={onClickHandler}>HIDE</button>
-        <img className='movieImg' src={imageUrl} alt={title}/>
+        <img className='movieImg' src={poster_path} alt={title}/>
         <div>
           <h3>{title}</h3>
-          <h3>{score}</h3>
-          <h3>{year}</h3>
-          <p>{genre}</p>
-          <p>{desc}</p>
+          <h3>{vote_average}</h3>
+          <h3>{release_date}</h3>
+          <p>{genres}</p>
+          <p>{overview}</p>
         </div>
       </div>
     </>

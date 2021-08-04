@@ -1,15 +1,21 @@
 import React from "react";
 
 type Props = {
-  type: string,
-  placeholder: string,
+  name: string,
+  type?: string,
+  placeholder?: string,
   label: string,
+  field: any;
 }
-const AddMovieInput = ({ type, placeholder, label }: Props) => {
+const AddMovieInput = ({ label, name, type, placeholder, field }: Props) => {
   return (
-    <div>
-    <div>{label}</div>
-    <input type={type} className="input" placeholder={placeholder}/>
+    <div className="addMovieInput">
+    <label>{label}</label>
+      <input
+        name={name}
+        type={type}
+        {...field}
+        placeholder={placeholder}/>
     </div>
   )
 }
