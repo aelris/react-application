@@ -45,11 +45,10 @@ const AddMoviePage = ({active, setActive}: {active: boolean; setActive: (status:
                 {Object.keys(formInputsObj).map((key) => {
                   return (
                     <React.Fragment key={key}>
-                      <Field key={formInputsObj.name}>
+                      <Field>
                         {
                           ({field}: any) => (
                             <AddMovieInput
-                              key={key}
                               label={formInputsObj[key].label}
                               name={formInputsObj[key].name}
                               type={formInputsObj[key].type}

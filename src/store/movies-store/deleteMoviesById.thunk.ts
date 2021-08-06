@@ -1,9 +1,10 @@
 import {moviesSlice} from "./movies.slice";
 import {moviesService} from "../../api/movies-api/movies.service";
 import {Movie} from "../../api/movies-api/models/movie.model";
+import {Dispatch} from "redux";
 
 export const deleteMoviesByIdThunk = (movieId: Movie) => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch) => {
     dispatch(moviesSlice.actions.deleteMoviesById(movieId))
 
     try {
@@ -11,8 +12,7 @@ export const deleteMoviesByIdThunk = (movieId: Movie) => {
 
       dispatch(moviesSlice.actions.getMoviesSuccess(data))
 
-    } catch (e) {
-
+    } catch {
       dispatch(moviesSlice.actions.getMoviesFailed())
     }
   }

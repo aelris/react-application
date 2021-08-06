@@ -22,8 +22,11 @@ export const moviesSlice = createSlice({
   name: 'Movies Slice',
   initialState,
   reducers: {
-    getMovies: (state: MoviesState, action: PayloadAction<Pagination>) => {
-        state.entities
+    getMovies: (state: MoviesState) => {
+      return {
+        ...state,
+        loading: true
+      }
     },
     getMoviesSuccess: (state: MoviesState, action: PayloadAction<PaginatedResult<Movie>>) => {
       return {
