@@ -1,14 +1,12 @@
-
 .movieContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
 }
 
 .genresContainer {
-    width: 40%;
-    display: flex;
-    flex-direction: row;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
 }
-

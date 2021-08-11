@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import { Route, Router, Switch } from "react-router";
 import { createBrowserHistory } from "history";
-import Home from './pages/home';
-import './App.css';
-import {Provider} from "react-redux";
-import {store} from "./store";
+import Home from "./pages/home";
+import "./App.css";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const history = createBrowserHistory();
 const App = () => {
@@ -13,12 +13,12 @@ const App = () => {
       <Router history={history}>
         <Switch>
           <Route exact path="/">
-            <Home/>
+            <Home />
           </Route>
         </Switch>
       </Router>
     </Provider>
   );
-}
+};
 
 export default App;

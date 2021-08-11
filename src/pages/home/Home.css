@@ -1,42 +1,43 @@
 .addMovieContainer {
-    margin-right: 10%;
-    display: flex;
-    justify-content: flex-end;
+  margin-right: 10%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .searchContainer {
-    display: flex;
-    margin: 20px;
-    justify-content: center;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
 }
 
 .searchInput {
-    width: 60%;
-    height: 46px;
-    border: none;
-    box-shadow: none;
-    border-radius: 5px;
-    background: #424242;
-    color: #9ca4ab;
-    font-size: 18px;
-    padding-left: 15px;
-    margin-right: 15px;
+  width: 60%;
+  height: 46px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  background: #424242;
+  color: #9ca4ab;
+  font-size: 18px;
+  padding-left: 15px;
+  margin-right: 15px;
 }
 
 .addMovie {
-    border: none;
-    box-shadow: none;
-    border-radius: 5px;
-    background: #9ca4ab;
-    cursor: pointer;
-    width: 182px;
-    height: 46px;
-    color: #f65261;
-    text-transform: uppercase;
-    font-size: 18px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  background: #9ca4ab;
+  cursor: pointer;
+  width: 182px;
+  height: 46px;
+  color: #f65261;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 
 .header {
-    height: 500px;
-    background: no-repeat center/100% url("https://wallpapercave.com/wp/wp1945909.jpg");
+  height: 500px;
+  background: no-repeat center/100%
+    url("https://wallpapercave.com/wp/wp1945909.jpg");
 }
