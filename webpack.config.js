@@ -8,6 +8,14 @@ const config = {
     filename: 'index.bundle.js',
   },
   mode: process.env.NODE_ENV || 'development',
+  devServer: {
+    historyApiFallback: true,
+    proxy: {
+      '/': {
+        target: 'http://localhost:4000',
+      },
+    },
+  },
   module: {
     rules: [
       {
@@ -36,9 +44,6 @@ const config = {
       inject: 'body',
     }),
   ],
-  devServer: {
-    historyApiFallback: true,
-  },
   resolve: {
     extensions: [
       '.ts',

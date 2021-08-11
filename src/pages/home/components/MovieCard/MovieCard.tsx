@@ -1,7 +1,7 @@
 import React, {useCallback} from "react";
 import './moviecard.css'
 import Kebab from "../Kebab/Kebab";
-import {Movie} from "../MovieCardContainer/MovieList";
+import {Movie} from "../../../../api/movies-api/models/movie.model";
 
 type Props = {
   movie: Movie;
@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default function MovieCard({ movie, onClick}: Props){
-    const { imageUrl, title, year, genre } = movie;
+    const { poster_path, title, release_date, genres } = movie;
 
     const onClickHandler = useCallback(() => {
       onClick(movie)
@@ -19,10 +19,10 @@ export default function MovieCard({ movie, onClick}: Props){
         <>
             <div className="MovieCard">
                 <Kebab/>
-                <img className='movieImg' src={imageUrl} alt={title} onClick={onClickHandler}/>
+                <img className='movieImg' src={poster_path} alt={title} onClick={onClickHandler}/>
                 <h3>{title}</h3>
-                <h3>{year}</h3>
-                <p>{genre}</p>
+                <h3>{new Date(release_date).getFullYear()}</h3>
+                <p>{genres.join(" & ")}</p>
             </div>
         </>
     )
