@@ -3,16 +3,10 @@ import { moviesService } from "../../api/movies-api/movies.service";
 import { Movie } from "../../api/movies-api/models/movie.model";
 import { Dispatch } from "redux";
 
-export const deleteMoviesByIdThunk = (movieId: Movie) => {
+export const deleteMoviesByIdThunk = (movie: Movie) => {
   return async (dispatch: Dispatch) => {
-    dispatch(moviesSlice.actions.deleteMoviesById(movieId));
+    dispatch(moviesSlice.actions.deleteMoviesById(movie));
 
-    try {
-      const { data } = await moviesService.deleteMoviesById(movieId.id);
-
-      dispatch(moviesSlice.actions.getMoviesSuccess(data));
-    } catch {
-      dispatch(moviesSlice.actions.getMoviesFailed());
-    }
+    await moviesService.deleteMoviesById(movie.id);
   };
 };
