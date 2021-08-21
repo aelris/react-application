@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import "./App.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import NotFound from "./pages/NotFound/NotFound";
 
 const history = createBrowserHistory();
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route component={NotFound} />
         </Switch>
       </Router>
     </Provider>
