@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMoviesThunk } from "../../store/movies-store/getMovies.thunk";
 import { Store } from "../../store";
 import { Movie } from "../../api/movies-api/models/movie.model";
+import {search} from '../../store/movies-store/search.thunk';
 
 const Home = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -51,6 +52,7 @@ const Home = () => {
                 type="text"
                 className="searchInput"
                 placeholder="What do you want to watch?"
+                onChange={(e) => search(e.target.value)}
               />
               <SearchButton />
             </div>
