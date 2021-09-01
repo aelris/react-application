@@ -1,5 +1,6 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './server/index.js',
@@ -27,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['css-loader'],
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
@@ -35,6 +36,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public', 'index.html'),
+      inject: 'body',
+    }),
+  ],
   resolve: {
     extensions: [
       '.ts',

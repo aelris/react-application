@@ -4,14 +4,27 @@ import fs from 'fs';
 import React from 'react';
 import express from 'express';
 import ReactDOMServer from 'react-dom/server';
+import { BrowserRouter, Route, Router } from "react-router-dom";
+import { createMemoryHistory } from 'history';
 
 import App from '../src/App.tsx';
 
 const PORT = process.env.PORT || 3006;
 const app = express();
+const jsdom = require('jsdom');
+
+const { JSDOM } = jsdom;
+global.document = new JSDOM(app).window.document;
 
 app.get('/', (req, res) => {
-  const app = ReactDOMServer.renderToString(<App />);
+  const history = createMemoryHistory();
+  const app = ReactDOMServer.renderToString(
+    <BrowserRouter>
+      <Router history={history}>
+        <App />
+      </Router>
+    </BrowserRouter>,
+  );
 
   const indexFile = path.resolve('./build/index.html');
   fs.readFile(indexFile, 'utf8', (err, data) => {
